@@ -54,7 +54,7 @@ jobs:
     - name: Checkout Ed-Fi-ODS-Implementation
       uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
       with:
-          repository: Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation
+          repository: semalaiappan/Ed-Fi-ODS-Implementation
           path: Ed-Fi-ODS-Implementation/
     - name: Verify dependent workflows are success or not 
       run: |
@@ -67,7 +67,7 @@ jobs:
 
           foreach ($workflow in $workflowNames) {
             
-            $url = "https://api.github.com/repos/Ed-Fi-Alliance-OSS/Ed-Fi-ODS-Implementation/actions/workflows/$workflow/runs?head_sha=$sha"
+            $url = "https://api.github.com/repos/semalaiappan/Ed-Fi-ODS-Implementation/actions/workflows/$workflow/runs?head_sha=$sha"
             $headers = @{
                     Authorization = "Bearer $env:EDFI_ODS_TOKEN"
                     Accept = "application/vnd.github.v3+json"
